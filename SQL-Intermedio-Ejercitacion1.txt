@@ -11,7 +11,7 @@
   FROM PROFESOR
   WHERE fecha_nacimiento BETWEEN '1980-01-01' and '1989-12-31'
   
-4. Escriba las siguientes consultas:
+3. Escriba las siguientes consultas:
 
   -Cantidad de pasajeros por país
   
@@ -35,3 +35,6 @@
   SELECT a.num_documento, AVG(monto + impuesto) as 'promedio_pagos_pasajero'
   FROM PASAJERO a INNER JOIN PAGO p on a.idpasajero = p.idpasajero
   GROUP BY a.num_documento
+  
+  
+  
