@@ -1,9 +1,11 @@
 
+1. Escriba una consulta para saber cuántos estudiantes son de la carrera Mecánica.
 
-
+  SELECT carrera, COUNT(legajo) as 'cantidad_estudiantes'
+  FROM ESTUDIANTE
+  WHERE carrera = 'Mecánica'
 
 2. Escriba una consulta para saber, de la tabla PROFESOR, el salario mínimo de los profesores nacidos en la década del 80.
-
 
   SELECT MIN(salario) as 'salario_minimo'
   FROM PROFESOR
