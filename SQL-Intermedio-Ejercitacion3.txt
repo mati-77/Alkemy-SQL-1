@@ -1,0 +1,38 @@
+Ejercitación 3.1
+Objetivo
+
+El objetivo de este ejercicio es poder visualizar la diferencia y el impacto que tienen los índices aplicados a una tabla.
+
+Para visualizar el concepto de índices clousterizados, ingrese a https://sqliteonline.com/ utilizando el motor “MariaDB” y siga los pasos:
+
+a.Crear una tabla persona sin primary key y solamente con dos campos: id y nombre
+
+CREATE table persona (
+  id INT,
+  nombre varchar(100)
+)
+
+b.Inserte datos siguiendo un orden no secuencial para el id.
+
+INSERT INTO persona VALUES (2,'Matías')
+INSERT INTO persona VALUES (7,'Melina')
+INSERT INTO persona VALUES (1,'Emiliano')
+INSERT INTO persona VALUES (5,'Renzo')
+
+c.Consulte los datos para visualizar el orden de registros.
+
+SELECT * FROM persona
+
+Los registros se muestran en el mismo orden en que fueron incorporados
+
+d.Agregue una clave primaria para el campo id.
+
+ALTER TABLE persona ADD CONSTRAINT PK_id PRIMARY KEY(id)
+
+e.Consulte los datos para visualizar el orden de registros.
+
+SELECT * FROM persona
+
+Los registros ahora se muestran ordenados por el campo id.
+
+
