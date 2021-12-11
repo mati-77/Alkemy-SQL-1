@@ -1,0 +1,10 @@
+EJERCITACION FINAL
+
+1)Escriba una consulta que devuelva el legajo y la cantidad de cursos que realiza cada estudiante.
+
+  SELECT ESTUDIANTE_legajo, COUNT(CURSO_codigo) as cantidad_de_cursos
+  FROM INSCRIPCION
+  GROUP BY ESTUDIANTE_legajo
+  
+
+
