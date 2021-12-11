@@ -35,10 +35,18 @@ EJERCITACION FINAL
     
 5) Liste toda la información sobre los estudiantes que realizan cursos con los profesores de apellido “Pérez” y “Paz”.
 
-  
-    
-    
-    
-    
-    
-
+  SELECT *
+  FROM ESTUDIANTE e
+  WHERE e.legajo IN (SELECT ESTUDIANTE_legajo FROM INSCRIPCION i 
+                     WHERE CURSO_codigo IN (SELECT codigo FROM CURSO c INNER JOIN PROFESOR p 
+                                            ON c.PROFESOR_id = p.id
+                                            WHERE p.apellido = 'Pérez')
+                    )
+  AND e.legajo IN (SELECT ESTUDIANTE_legajo FROM INSCRIPCION i 
+                     WHERE CURSO_codigo IN (SELECT codigo FROM CURSO c INNER JOIN PROFESOR p 
+                                            ON c.PROFESOR_id = p.id
+                                            WHERE p.apellido = 'Paz')
+                  )
+                  
+ 
+ 
